@@ -1,0 +1,93 @@
+:root {
+  color-scheme: dark;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background-color: #020617;
+  color: #e2e8f0;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at 20% 20%, rgba(79, 70, 229, 0.25), transparent),
+    radial-gradient(circle at 80% 30%, rgba(2, 132, 199, 0.2), transparent),
+    #020617;
+}
+
+.page {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.overlay {
+  position: relative;
+  width: min(100%, 1280px);
+  aspect-ratio: 16 / 9;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(148, 163, 184, 0.08);
+  background-color: rgba(2, 6, 23, 0.9);
+}
+
+.titleBlock {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  max-width: 420px;
+  padding: 24px 28px;
+  border-radius: 24px;
+  backdrop-filter: blur(28px);
+  background: linear-gradient(120deg, rgba(15, 23, 42, 0.75), rgba(14, 116, 144, 0.4));
+  box-shadow: 0 30px 70px rgba(15, 118, 110, 0.25);
+}
+
+.titleBlock h1 {
+  font-size: clamp(1.8rem, 2.4vw, 2.8rem);
+  letter-spacing: -0.02em;
+  color: #f8fafc;
+  margin-bottom: 12px;
+}
+
+.titleBlock p {
+  font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+  line-height: 1.5;
+  color: rgba(226, 232, 240, 0.85);
+}
+
+.videoCanvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+@media (max-width: 960px) {
+  .overlay {
+    border-radius: 0;
+  }
+
+  .titleBlock {
+    top: 24px;
+    left: 24px;
+    right: 24px;
+    max-width: none;
+  }
+}
